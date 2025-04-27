@@ -59,7 +59,7 @@ public class AuthorsController : ControllerBase
             return NotFound();
         }
 
-        // Optional: Also remove associated books
+      
         _context.Books.RemoveRange(author.Books);
 
         _context.Authors.Remove(author);

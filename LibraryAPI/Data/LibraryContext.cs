@@ -15,12 +15,12 @@ namespace LibraryAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Author has many Books
+         
             modelBuilder.Entity<Author>()
                 .HasMany(a => a.Books)
                 .WithOne(b => b.Author)
                 .HasForeignKey(b => b.AuthorId)
-                .OnDelete(DeleteBehavior.Cascade); // Optional: delete books if author is deleted
+                .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(modelBuilder);
         }

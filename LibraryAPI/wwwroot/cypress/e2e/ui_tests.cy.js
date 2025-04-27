@@ -30,7 +30,7 @@ describe('LibraryAPI UI Tests', () => {
 
 });
 
-// ➡️ Add Book Form Tests Below
+
 describe('📚 Book Form Tests', () => {
 
   beforeEach(() => {
@@ -40,20 +40,20 @@ describe('📚 Book Form Tests', () => {
   it('Should add a new book with valid input', () => {
     cy.visit('https://localhost:44318/index.html');
 
-    // Fill in book details
+    
     cy.get('#bookTitle').clear().type('Cypress Test Book');
-    cy.get('#bookAuthorId').clear().type('10');   // Ensure Author ID 10 exists or just type here the id of an existing author in the DB
-
+    cy.get('#bookAuthorId').clear().type('10');   
+    
     cy.contains('Add Book').click();
 
-    // Reload the books list
+    
     cy.contains('Load Books').click();
 
-    // Explicitly wait for list items and check for the book
+    
     cy.get('#booksList li')
-        .should('exist')  // Wait until at least one item exists
-        .contains('Cypress Test Book')  // Look for the specific book
-        .should('be.visible');  // Ensure it's visible
+        .should('exist')  
+        .contains('Cypress Test Book') 
+        .should('be.visible');
   });
 
 

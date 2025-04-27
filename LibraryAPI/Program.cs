@@ -31,7 +31,7 @@ public class Program
             app.UseSwaggerUI();
         }
 
-        // ✅ Serve static files from wwwroot
+      
         app.UseStaticFiles();
 
         app.UseHttpsRedirection();

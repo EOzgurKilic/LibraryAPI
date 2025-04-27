@@ -21,7 +21,7 @@ This project is a simple Library Management API built with .NET Core and connect
 
 ```json
 "ConnectionStrings": {
-  "DefaultConnection": "server=localhost;port=3306;database=librarydb;user=root;password=YOUR_PASSWORD"
+"DefaultConnection": "server=localhost;port=3306;database=librarydb;user=root;password=YOUR_PASSWORD"
 }
 ```
 Replace `YOUR_PASSWORD` with your MySQL root password.
@@ -71,16 +71,19 @@ https://localhost:44318/api
 - If port `44318` is busy, adjust the launch settings.
 - Before running the project, make sure the following NuGet packages are installed:
 
- Microsoft.EntityFrameworkCore
- Microsoft.EntityFrameworkCore.Tools
- Pomelo.EntityFrameworkCore.MySql
+Microsoft.EntityFrameworkCore 
+ 
+Microsoft.EntityFrameworkCore.Tools
+ 
+Pomelo.EntityFrameworkCore.MySql
 
 You can install them via NuGet Package Manager or using the CLI:
 
 ```bash
+
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.Tools
 dotnet add package Pomelo.EntityFrameworkCore.MySql
----
+```
 
 Please feel free to reach me out in any case :)

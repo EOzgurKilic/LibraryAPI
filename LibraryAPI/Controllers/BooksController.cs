@@ -26,8 +26,7 @@ public class BooksController : ControllerBase
                 b.Id,
                 b.Title,
                 b.AuthorId
-                // Optionally, include Author Name:
-                // AuthorName = b.Author.Name
+               
             })
             .ToListAsync();
 
@@ -58,11 +57,11 @@ public class BooksController : ControllerBase
         if (existingBook == null)
             return NotFound();
 
-        // Update only scalar properties
+        
         existingBook.Title = updatedBook.Title;
         existingBook.AuthorId = updatedBook.AuthorId;
 
-        // Don’t touch the Author object directly
+
         await _context.SaveChangesAsync();
 
         return NoContent();

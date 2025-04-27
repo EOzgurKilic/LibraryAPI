@@ -1,11 +1,11 @@
-﻿const API_BASE_URL = "https://localhost:44318/api";  // Your correct API base URL
+﻿const API_BASE_URL = "https://localhost:44318/api"; 
 
-// On page load, don't auto-fetch to avoid errors if API isn't ready
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Page Loaded. Ready to fetch data!");
 });
 
-// Fetch Authors (GET)
+
 function getAuthors() {
     fetch(`${API_BASE_URL}/Authors`)
         .then(response => {
@@ -13,11 +13,11 @@ function getAuthors() {
             return response.json();
         })
         .then(data => {
-            console.log("Authors Data:", data);  // Debug log
+            console.log("Authors Data:", data); 
             const authorsList = document.getElementById("authorsList");
             authorsList.innerHTML = "";
 
-            // Handle $values wrapping
+            
             const authors = Array.isArray(data) ? data : data.$values;
 
             if (!Array.isArray(authors)) throw new Error("Unexpected authors data format!");
@@ -38,7 +38,7 @@ function getAuthors() {
 }
 
 
-// Fetch Books (GET)
+
 function getBooks() {
     fetch(`${API_BASE_URL}/Books`)
         .then(response => {
@@ -55,7 +55,7 @@ function getBooks() {
             if (!Array.isArray(books)) throw new Error("Unexpected books data format!");
 
             books.forEach(book => {
-                // Skip $ref entries (they don't have actual data)
+           
                 if (book.hasOwnProperty('$ref')) return;
 
                 const title = book.title || "No Title";
@@ -76,7 +76,7 @@ function getBooks() {
 }
 
 
-// Add Author (POST)
+
 function addAuthor() {
     const name = document.getElementById("authorName").value.trim();
     if (!name) return alert("Author name cannot be empty!");
@@ -97,7 +97,7 @@ function addAuthor() {
         .catch(error => console.error(error));
 }
 
-// Add Book (POST)
+
 function addBook() {
     const title = document.getElementById("bookTitle").value.trim();
     const authorId = parseInt(document.getElementById("bookAuthorId").value);
@@ -121,7 +121,7 @@ function addBook() {
         .catch(error => console.error(error));
 }
 
-// Delete Author (DELETE)
+
 function deleteAuthor(id) {
     if (!confirm("Are you sure you want to delete this author?")) return;
 
@@ -133,7 +133,7 @@ function deleteAuthor(id) {
         .catch(error => console.error(error));
 }
 
-// Delete Book (DELETE)
+
 function deleteBook(id) {
     if (!confirm("Are you sure you want to delete this book?")) return;
 
@@ -145,7 +145,7 @@ function deleteBook(id) {
         .catch(error => console.error(error));
 }
 
-// Update Author (PUT)
+
 function updateAuthor(id) {
     const newName = prompt("Enter new author name:");
     if (!newName) return;
@@ -162,7 +162,7 @@ function updateAuthor(id) {
         .catch(error => console.error(error));
 }
 
-// Update Book (PUT)
+
 function updateBook(id) {
     const newTitle = prompt("Enter new book title:");
     const newAuthorId = prompt("Enter new author ID:");
