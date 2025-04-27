@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\CSS\\Style.css",
+      "PackagePath": "staticwebassets\\CSS\\Style.css"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\Index.html",
+      "PackagePath": "staticwebassets\\Index.html"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\JS\\Script.js",
+      "PackagePath": "staticwebassets\\JS\\Script.js"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress.config.js",
+      "PackagePath": "staticwebassets\\cypress.config.js"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\e2e\\ui_tests.cy.js",
+      "PackagePath": "staticwebassets\\cypress\\e2e\\ui_tests.cy.js"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\fixtures\\example.json",
+      "PackagePath": "staticwebassets\\cypress\\fixtures\\example.json"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\support\\commands.js",
+      "PackagePath": "staticwebassets\\cypress\\support\\commands.js"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\support\\e2e.js",
+      "PackagePath": "staticwebassets\\cypress\\support\\e2e.js"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\package-lock.json",
+      "PackagePath": "staticwebassets\\package-lock.json"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\package.json",
+      "PackagePath": "staticwebassets\\package.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LibraryAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LibraryAPI.props",
+      "PackagePath": "build\\LibraryAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LibraryAPI.props",
+      "PackagePath": "buildMultiTargeting\\LibraryAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LibraryAPI.props",
+      "PackagePath": "buildTransitive\\LibraryAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

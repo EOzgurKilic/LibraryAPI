@@ -1,0 +1,15 @@
+LibraryAPI.Tests (9 tests) Success
+  LibraryAPI.Tests (9 tests) Success
+    ControllersTests (8 tests) Success
+      AuthorsControllerTests (4 tests) Success
+        CreateAuthor_AddsAuthor Success
+        DeleteAuthor_RemovesAuthor Success
+        GetAuthors_ReturnsAllAuthors Success
+        UpdateAuthor_ValidUpdate Success
+      BooksControllerTests (4 tests) Success
+        CreateBook_AddsBook Success
+        DeleteBook_RemovesBook Success
+        GetBooks_ReturnsAllBooks Success
+        UpdateBook_ValidUpdate Success
+    UnitTest1 (1 test) Success
+      Test1 Success

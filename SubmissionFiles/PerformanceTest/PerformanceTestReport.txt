@@ -1,0 +1,7 @@
+I used Apache JMeter to evaluate the performance of my LibraryAPI by simulating 10, 50, and 100 concurrent users. During these tests, the system showed stable behavior with no errors recorded in any scenario.
+
+When testing with 10 users, the response times were low and consistent, indicating that the API handles light traffic very well. As I increased the load to 50 users, I noticed a slight rise in response times, but the performance remained within acceptable limits. Finally, under the heavy load of 100 users, the response times increased further, which is expected, but the system successfully managed all requests without any failures.
+
+Based on these results, we can say that the API is reliable and scalable for different levels of user traffic. However, to improve performance under high load, I suggest optimizing database queries and adding caching mechanisms for frequently accessed data. Regular monitoring is also recommended if the application will face heavy usage in a production environment.
+
+In conclusion, the LibraryAPI performs well, but with minor improvements, it can provide even better response times when handling a large number of users.

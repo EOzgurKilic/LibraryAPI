@@ -1,0 +1,306 @@
+{
+	"id": "9a6d8649-346c-4b8d-ab1a-752bcaa74df6",
+	"name": "Library",
+	"timestamp": "2025-04-25T23:24:41.447Z",
+	"collection_id": "42430026-9c47a887-6ab0-40d4-b2b9-521ad7a60162",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 10,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-04-25T23:24:40.387Z",
+	"totalFail": 4,
+	"results": [
+		{
+			"id": "3ee608e1-22f7-4c6f-8d9d-9e77b1cad79f",
+			"name": "AuthorsGet",
+			"url": "https://localhost:44318/api/Authors",
+			"time": 38,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is a JSON object with values array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is a JSON object with values array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				38
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is a JSON object with values array": true
+				}
+			]
+		},
+		{
+			"id": "330a98f8-05a1-4b93-ac6b-8c2cd7ae78fd",
+			"name": "AuthorsPost",
+			"url": "https://localhost:44318/api/Authors",
+			"time": 22,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 201": false,
+				"Response contains id and name": false,
+				"Status code is 400 for invalid author name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response contains id and name": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code is 400 for invalid author name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				22
+			],
+			"allTests": [
+				{
+					"Status code is 201": false,
+					"Response contains id and name": false,
+					"Status code is 400 for invalid author name": true
+				}
+			]
+		},
+		{
+			"id": "b9066bf4-c4c7-46f4-9bbc-187be0e42731",
+			"name": "AuthorsPut",
+			"url": "https://localhost:44318/api/Authors/9999",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Returns 404 for updating nonexistent author": true
+			},
+			"testPassFailCounts": {
+				"Returns 404 for updating nonexistent author": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Returns 404 for updating nonexistent author": true
+				}
+			]
+		},
+		{
+			"id": "5f5b3a86-8817-4951-adee-5abaefeb4fcf",
+			"name": "AuthotsDelete",
+			"url": "https://localhost:44318/api/Authors/6",
+			"time": 18,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status is 204 No Content": true
+			},
+			"testPassFailCounts": {
+				"Status is 204 No Content": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"Status is 204 No Content": true
+				}
+			]
+		},
+		{
+			"id": "878a1fe1-cf3f-4afb-9ad9-6b8061ad100f",
+			"name": "BooksGet",
+			"url": "https://localhost:44318/api/Books",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is a JSON object with values array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is a JSON object with values array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is a JSON object with values array": true
+				}
+			]
+		},
+		{
+			"id": "4d7c80c3-751a-46e1-a7d6-5e1ab5fb4a70",
+			"name": "BooksPost",
+			"url": "https://localhost:44318/api/Books",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 201": false,
+				"Response has title and authorId": false,
+				"Returns 400 for missing book title": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response has title and authorId": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Returns 400 for missing book title": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 201": false,
+					"Response has title and authorId": false,
+					"Returns 400 for missing book title": true
+				}
+			]
+		},
+		{
+			"id": "30b39633-0a94-44a6-b655-791646b7524a",
+			"name": "BooksPut",
+			"url": "https://localhost:44318/api/Books/8",
+			"time": 17,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "f2bb0b48-979b-46a2-bf12-2b11e410c5c0",
+			"name": "BooksDelete",
+			"url": "https://localhost:44318/api/Books/985",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Returns 404 for deleting nonexistent book": true
+			},
+			"testPassFailCounts": {
+				"Returns 404 for deleting nonexistent book": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Returns 404 for deleting nonexistent book": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 132,
+	"collection": {
+		"requests": [
+			{
+				"id": "3ee608e1-22f7-4c6f-8d9d-9e77b1cad79f",
+				"method": "GET"
+			},
+			{
+				"id": "330a98f8-05a1-4b93-ac6b-8c2cd7ae78fd",
+				"method": "POST"
+			},
+			{
+				"id": "b9066bf4-c4c7-46f4-9bbc-187be0e42731",
+				"method": "PUT"
+			},
+			{
+				"id": "5f5b3a86-8817-4951-adee-5abaefeb4fcf",
+				"method": "DELETE"
+			},
+			{
+				"id": "878a1fe1-cf3f-4afb-9ad9-6b8061ad100f",
+				"method": "GET"
+			},
+			{
+				"id": "4d7c80c3-751a-46e1-a7d6-5e1ab5fb4a70",
+				"method": "POST"
+			},
+			{
+				"id": "30b39633-0a94-44a6-b655-791646b7524a",
+				"method": "PUT"
+			},
+			{
+				"id": "f2bb0b48-979b-46a2-bf12-2b11e410c5c0",
+				"method": "DELETE"
+			}
+		]
+	}
+}
