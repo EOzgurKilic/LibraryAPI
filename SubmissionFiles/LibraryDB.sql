@@ -1,0 +1,18 @@
+
+-- Create Database
+CREATE DATABASE IF NOT EXISTS librarydb;
+USE librarydb;
+
+-- Authors Table
+CREATE TABLE IF NOT EXISTS Authors (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL
+);
+
+-- Books Table
+CREATE TABLE IF NOT EXISTS Books (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Title VARCHAR(200) NOT NULL,
+    AuthorId INT,
+    FOREIGN KEY (AuthorId) REFERENCES Authors(Id) ON DELETE CASCADE
+);
