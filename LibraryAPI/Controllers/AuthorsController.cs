@@ -1,4 +1,5 @@
-﻿using LibraryAPI.Data;
+﻿using System.Reflection.Metadata.Ecma335;
+using LibraryAPI.Data;
 using LibraryAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,8 @@ public class AuthorsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Author>> CreateAuthor(Author author)
     {
+        /*author.Name = "CodeErrora";
+        author.Id = 1638;*/
         _context.Authors.Add(author);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetAuthors), new { id = author.Id }, author);
@@ -38,13 +41,13 @@ public class AuthorsController : ControllerBase
             return BadRequest("Author ID mismatch.");
         }
 
-        var existingAuthor = await _context.Authors.FindAsync(id);
+        var existingAuthor = await _context.Authors.FindAsync(id);//3216);
         if (existingAuthor == null)
         {
             return NotFound();
         }
 
-        existingAuthor.Name = updatedAuthor.Name;
+        existingAuthor.Name = updatedAuthor.Name; //+ "asdsacx";
         await _context.SaveChangesAsync();
 
         return NoContent();
@@ -53,7 +56,7 @@ public class AuthorsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAuthor(int id)
     {
-        var author = await _context.Authors.Include(a => a.Books).FirstOrDefaultAsync(a => a.Id == id);
+        var author = await _context.Authors.Include(a => a.Books).FirstOrDefaultAsync(a => a.Id == id); //6549);
         if (author == null)
         {
             return NotFound();

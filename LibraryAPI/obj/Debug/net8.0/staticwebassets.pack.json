@@ -25,6 +25,22 @@
       "PackagePath": "staticwebassets\\cypress\\fixtures\\example.json"
     },
     {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\screenshots\\ui_tests.cy.js\\LibraryAPI UI Tests -- should add a new author with valid input (failed).png",
+      "PackagePath": "staticwebassets\\cypress\\screenshots\\ui_tests.cy.js\\LibraryAPI UI Tests -- should add a new author with valid input (failed).png"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\screenshots\\ui_tests.cy.js\\LibraryAPI UI Tests -- should load the homepage correctly (failed).png",
+      "PackagePath": "staticwebassets\\cypress\\screenshots\\ui_tests.cy.js\\LibraryAPI UI Tests -- should load the homepage correctly (failed).png"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\screenshots\\ui_tests.cy.js\\LibraryAPI UI Tests -- should not add an author with empty input (failed).png",
+      "PackagePath": "staticwebassets\\cypress\\screenshots\\ui_tests.cy.js\\LibraryAPI UI Tests -- should not add an author with empty input (failed).png"
+    },
+    {
+      "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\screenshots\\ui_tests.cy.js\\\uD83D\uDCDA Book Form Tests -- Should add a new book with valid input -- before each hook (failed).png",
+      "PackagePath": "staticwebassets\\cypress\\screenshots\\ui_tests.cy.js\\\uD83D\uDCDA Book Form Tests -- Should add a new book with valid input -- before each hook (failed).png"
+    },
+    {
       "Id": "C:\\Users\\Yusei\\RiderProjects\\LibraryAPI\\LibraryAPI\\wwwroot\\cypress\\support\\commands.js",
       "PackagePath": "staticwebassets\\cypress\\support\\commands.js"
     },

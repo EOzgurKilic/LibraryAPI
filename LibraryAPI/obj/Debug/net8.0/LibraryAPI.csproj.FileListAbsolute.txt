@@ -111,3 +111,4 @@ C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI\bin\Debug\net8.0\zh-Hans\Micr
 C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI\bin\Debug\net8.0\LibraryAPI.staticwebassets.runtime.json
 C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI\obj\Debug\net8.0\LibraryAPI.sourcelink.json
+C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI\bin\Debug\net8.0\cypress\fixtures\example.json

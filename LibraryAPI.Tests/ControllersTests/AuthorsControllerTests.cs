@@ -11,13 +11,13 @@ namespace LibraryAPI.Tests.ControllersTests
 {
     public class AuthorsControllerTests
     {
-        private AuthorsController GetControllerWithInMemoryDb()
+        private AuthorsController GetControllerWithInMemoryDb(out LibraryContext context)
         {
             var options = new DbContextOptionsBuilder<LibraryContext>()
                 .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
 
-            var context = new LibraryContext(options);
+            context = new LibraryContext(options);
 
             context.Authors.AddRange(
                 new Author { Id = 1, Name = "Test Author 1" },
@@ -29,11 +29,13 @@ namespace LibraryAPI.Tests.ControllersTests
         }
 
 
+
         [Fact]
         public async Task GetAuthors_ReturnsAllAuthors()
         {
             
-            var controller = GetControllerWithInMemoryDb();
+            var controller = GetControllerWithInMemoryDb(out var context);
+
 
            
             var result = await controller.GetAuthors();
@@ -45,46 +47,66 @@ namespace LibraryAPI.Tests.ControllersTests
         }
         
         [Fact]
-        public async Task CreateAuthor_AddsAuthor()
+        public async Task CreateAuthor_AddsAuthor_WithExactValues()
         {
-           
-            var controller = GetControllerWithInMemoryDb();
-            var newAuthor = new Author { Name = "New Test Author" };
+            var controller = GetControllerWithInMemoryDb(out var context);
 
-           
+        
+            var inputAuthor = new Author { Id = 3, Name = "New Test Author" };
+
+          
+            var newAuthor = new Author { Id = inputAuthor.Id, Name = inputAuthor.Name };
+
             var result = await controller.CreateAuthor(newAuthor);
-
-           
             var createdAtActionResult = Assert.IsType<CreatedAtActionResult>(result.Result);
-            var author = Assert.IsType<Author>(createdAtActionResult.Value);
-            Assert.Equal("New Test Author", author.Name);
+            var returnedAuthor = Assert.IsType<Author>(createdAtActionResult.Value);
+
+          
+            Assert.Equal(inputAuthor.Id, returnedAuthor.Id);
+            Assert.Equal(inputAuthor.Name, returnedAuthor.Name);
+
+            
+            var authorInDb = await context.Authors
+                .AsNoTracking()
+                .FirstOrDefaultAsync(a => a.Id == inputAuthor.Id);
+
+            Assert.NotNull(authorInDb);
+            Assert.Equal(inputAuthor.Id, authorInDb.Id);        
+            Assert.Equal(inputAuthor.Name, authorInDb.Name);     
         }
+
+
         
         [Fact]
-        public async Task UpdateAuthor_ValidUpdate()
+        public async Task UpdateAuthor_ValidInput_EnforcesExactMatch()
         {
-            
-            var controller = GetControllerWithInMemoryDb();
+            var controller = GetControllerWithInMemoryDb(out var context);
             var updatedAuthor = new Author { Id = 1, Name = "Updated Author Name" };
 
-            
             var result = await controller.UpdateAuthor(1, updatedAuthor);
-
-           
             Assert.IsType<NoContentResult>(result);
+
+            var authorInDb = await context.Authors.AsNoTracking().FirstOrDefaultAsync(a => a.Id == updatedAuthor.Id);
+            Assert.NotNull(authorInDb);
+            Assert.Equal(updatedAuthor.Id, authorInDb.Id);
+            Assert.Equal(updatedAuthor.Name, authorInDb.Name);
         }
         
         [Fact]
-        public async Task DeleteAuthor_RemovesAuthor()
+        public async Task DeleteAuthor_RemovesCorrectAuthor()
         {
-           
-            var controller = GetControllerWithInMemoryDb();
+            var controller = GetControllerWithInMemoryDb(out var context);
+            var authorIdToDelete = 2;
 
-           
-            var result = await controller.DeleteAuthor(1);
-
-           
+            var result = await controller.DeleteAuthor(authorIdToDelete);
             Assert.IsType<NoContentResult>(result);
+
+            var deletedAuthor = await context.Authors.FindAsync(authorIdToDelete);
+            Assert.Null(deletedAuthor);
+
+            var remainingAuthor = await context.Authors.FindAsync(1);
+            Assert.NotNull(remainingAuthor);
+            Assert.NotEqual(authorIdToDelete, remainingAuthor.Id);
         }
 
         

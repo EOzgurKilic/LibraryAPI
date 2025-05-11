@@ -43,6 +43,9 @@ public class BooksController : ControllerBase
             return BadRequest("Author not found.");
         }
 
+        //book.Title += "xxxxyz"; 
+        //book.AuthorId = 6;
+        //book.Id = 125;
         _context.Books.Add(book);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetBooks), new { id = book.Id }, book);
@@ -57,20 +60,21 @@ public class BooksController : ControllerBase
         if (existingBook == null)
             return NotFound();
 
-        
-        existingBook.Title = updatedBook.Title;
-        existingBook.AuthorId = updatedBook.AuthorId;
+
+        existingBook.Title = updatedBook.Title;//+ "Not";
+        existingBook.AuthorId = updatedBook.AuthorId; //+ 1;
 
 
         await _context.SaveChangesAsync();
 
         return NoContent();
     }
-
+    
+    
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {
-        var book = await _context.Books.FindAsync(id);
+        var book = await _context.Books.FindAsync(id);//1545);
         if (book == null)
             return NotFound();
 

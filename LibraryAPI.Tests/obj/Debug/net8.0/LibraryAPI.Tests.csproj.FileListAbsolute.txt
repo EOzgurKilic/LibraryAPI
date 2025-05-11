@@ -146,3 +146,5 @@ C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI.Tests\obj\Debug\net8.0\refint
 C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI.Tests\obj\Debug\net8.0\LibraryAPI.Tests.pdb
 C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI.Tests\obj\Debug\net8.0\LibraryAPI.Tests.genruntimeconfig.cache
 C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI.Tests\obj\Debug\net8.0\ref\LibraryAPI.Tests.dll
+C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI.Tests\obj\Debug\net8.0\LibraryAPI.Tests.sourcelink.json
+C:\Users\Yusei\RiderProjects\LibraryAPI\LibraryAPI.Tests\bin\Debug\net8.0\cypress\fixtures\example.json
